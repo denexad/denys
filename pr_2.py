@@ -20,4 +20,4 @@ for t in types :
 
 most_common_type = max(type_count, key=type_count.get)
 
-print(f"Найчастіше зустрічається тип даних: {most_common_type.__name__}, кількість повторень: {type_count[most_common_type]}")
+print("Найчастіше зустрічається тип даних: {most_common_type.__name__}, кількість повторень: {type_count[most_common_type]}")
