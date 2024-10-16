@@ -7,17 +7,37 @@ print(type (hello), type (name), type (last_name), type (year))
 
 type_lst = (type (hello), type (name), type (last_name), type (year)) 
 
-values = [ hello, name, last_name, year]
+int_type = 0
+str_type = 0
+bool_type = 0
+dict_type = 0
 
-types = [type(value) for value in values]
+for check in type_lst:
 
-type_count = {}
-for t in types :
-    if t in type_count:
-        type_count[t] += 1
-    else:
-        type_count[t] = 1
+    if check == int:
+        int_type += 1
 
-most_common_type = max(type_count, key=type_count.get)
+    elif check == str:
+        str_type += 1
 
-print("Найчастіше зустрічається тип даних: {most_common_type.__name__}, кількість повторень: {type_count[most_common_type]}")
+    elif check == bool:
+        bool_type += 1
+
+    elif check == dict:
+        dict_type += 1
+
+greatest_value = max(int_type, str_type, bool_type, dict_type)
+
+if greatest_value == int_type:
+    result = 'int'
+
+elif greatest_value == str_type:
+    result = 'str'
+
+elif greatest_value == bool_type:
+    result = 'bool'
+
+elif greatest_value == dict_type:
+    result = 'dict'
+
+print("Найчастіший тип: ", result)
